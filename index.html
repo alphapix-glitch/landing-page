@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>36 Secrets to Combining Elegance and Comfort</title>
+    <meta name="description" content="Discover the simple fit rule that transforms how clothes look and feel on your body. Stop choosing between looking good OR feeling amazing.">
+    <meta property="og:title" content="36 Secrets to Combining Elegance and Comfort">
+    <meta property="og:description" content="The Simple Fit Rule That Changed Everything About My Style">
+    <meta property="og:type" content="website">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f3f0 0%, #e8e2d8 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f5f3f0 0%, #e8e2d8 100%);
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-text {
+            max-width: 600px;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            line-height: 1.2;
+        }
+        
+        .highlight {
+            color: #e74c3c;
+        }
+        
+        .hero-text .subtitle {
+            font-size: 1.4rem;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .price-offer {
+            background: rgba(231, 76, 60, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .price-offer p {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin: 0;
+        }
+        
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.4);
+        }
+        
+        .hero-image {
+            text-align: center;
+            position: relative;
+        }
+        
+        .ebook-cover {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            transform: perspective(1000px) rotateY(-15deg);
+            transition: transform 0.3s ease;
+        }
+        
+        .ebook-cover:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        .benefits {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #2c3e50;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .benefit-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .testimonial {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .secrets-preview {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .secrets-preview h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #2c3e50;
+        }
+        
+        .secrets-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .secret-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .secret-number {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .final-cta {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .guarantee {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .ebook-cover {
+                max-width: 300px;
+                transform: none;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .secrets-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1><span class="highlight">36 Secrets</span> to Combining Elegance and Comfort</h1>
+                    <p class="subtitle">The Simple Fit Rule That Changed Everything About My Style</p>
+                    
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                        Stop choosing between looking good OR feeling amazing. Discover the fit rule that transforms how clothes look and feel on your body.
+                    </p>
+                    
+                    <div class="price-offer">
+                        <p>🔥 <strong>Limited Time:</strong> Get instant download for <span class="price">$19.99</span></p>
+                    </div>
+                    
+                    <a href="https://phoenixdigi.gumroad.com/l/elegant-comfort-secrets" class="cta-button" target="_blank" rel="noopener">
+                        Get Your Copy Now →
+                    </a>
+                    
+                    <p style="font-size: 0.9rem; color: #7f8c8d; margin-top: 15px;">
+                        ✅ Instant download • ✅ 19-page guide • ✅ Mobile-friendly PDF
+                    </p>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect width='400' height='500' fill='%23f5f3f0'/%3E%3Ctext x='200' y='100' text-anchor='middle' font-family='Georgia' font-size='32' font-weight='bold' fill='%23e74c3c'%3E36 Secrets%3C/text%3E%3Ctext x='200' y='140' text-anchor='middle' font-family='Georgia' font-size='18' fill='%232c3e50'%3Eto Combining%3C/text%3E%3Ctext x='200' y='180' text-anchor='middle' font-family='Georgia' font-size='24' font-weight='bold' fill='%232c3e50'%3EElegance%3C/text%3E%3Ctext x='200' y='210' text-anchor='middle' font-family='Georgia' font-size='18' fill='%232c3e50'%3Eand%3C/text%3E%3Ctext x='200' y='250' text-anchor='middle' font-family='Georgia' font-size='24' font-weight='bold' fill='%232c3e50'%3EComfort%3C/text%3E%3Ctext x='200' y='320' text-anchor='middle' font-family='Georgia' font-size='16' fill='%237f8c8d'%3EDress Well,%3C/text%3E%3Ctext x='200' y='340' text-anchor='middle' font-family='Georgia' font-size='16' fill='%237f8c8d'%3EFeel Better%3C/text%3E%3Ctext x='200' y='450' text-anchor='middle' font-family='Georgia' font-size='14' fill='%23e74c3c'%3EOZ-CHIC 2025%3C/text%3E%3C/svg%3E" alt="36 Secrets to Combining Elegance and Comfort Ebook Cover" class="ebook-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2>What You'll Discover Inside</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">👗</div>
+                    <h3>Perfect Fit Rules</h3>
+                    <p>Learn why "fitted = tight" is the biggest style mistake and discover the real secret to well-fitted clothes that enhance your natural shape.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Timeless Wardrobe Essentials</h3>
+                    <p>Build a versatile wardrobe with pieces that work for every occasion - from professional meetings to casual weekends.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌟</div>
+                    <h3>Confidence & Comfort</h3>
+                    <p>Understand how clothing choices impact your mindset and learn to dress in ways that boost both confidence and physical comfort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secrets Preview -->
+    <section class="secrets-preview">
+        <div class="container">
+            <h2>A Sneak Peek at Your 36 Secrets</h2>
+            <div class="secrets-list">
+                <div class="secret-item">
+                    <span class="secret-number">Secret #2:</span>
+                    <strong>Choose Well-Fitted Clothes, Not Tight Ones</strong>
+                    <p>A well-fitted garment flatters your figure while providing optimal comfort. Learn the difference between fitted and tight.</p>
+                </div>
+                <div class="secret-item">
+                    <span class="secret-number">Secret #7:</span>
+                    <strong>Prioritize Natural Fabrics</strong>
+                    <p>Natural fibers like cotton, linen, and merino wool are soft, breathable, and ideal for regulating body temperature.</p>
+                </div>
+                <div class="secret-item">
+                    <span class="secret-number">Secret #13:</span>
+                    <strong>Invest in Timeless Pieces</strong>
+                    <p>Timeless clothing pieces like a white shirt and beige trench coat are solid foundations for an elegant wardrobe.</p>
+                </div>
+                <div class="secret-item">
+                    <span class="secret-number">Secret #31:</span>
+                    <strong>Wear What Flatters You</strong>
+                    <p>Choose clothing that flatters your body to feel beautiful and confident while prioritizing comfortable cuts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-content">
+                <p class="testimonial-text">
+                    "This guide changed everything about how I shop and dress. No more buying clothes that look amazing on the hanger but feel terrible on my body!"
+                </p>
+                <p><strong>- Sarah M., Style Enthusiast</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Transform Your Style?</h2>
+            <p>Join thousands of women who've discovered the secret to combining elegance and comfort. Get instant access to all 36 secrets for just $19.99.</p>
+            
+            <div class="guarantee">
+                <h3>💝 What You Get:</h3>
+                <p>✅ Complete 19-page style guide<br>
+                ✅ 36 actionable secrets<br>
+                ✅ Instant PDF download<br>
+                ✅ Mobile-friendly format</p>
+            </div>
+            
+            <a href="https://phoenixdigi.gumroad.com/l/elegant-comfort-secrets" class="cta-button" target="_blank" rel="noopener" style="background: white; color: #e74c3c; font-size: 1.3rem; padding: 20px 50px;">
+                Get Your Copy Now - $19.99 →
+            </a>
+            
+            <p style="margin-top: 20px; font-size: 0.9rem;">
+                Secure checkout through Gumroad • Instant download
+            </p>
+        </div>
+    </section>
+
+    <!-- Analytics and Tracking -->
+    <script>
+        // Pinterest Pixel tracking
+        function trackConversion(action) {
+            console.log('Pinterest pixel tracking:', action);
+            // Add your Pinterest pixel code here
+        }
+        
+        // Track CTA button clicks
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                trackConversion('button_click');
+                // Optional: Add Google Analytics or other tracking here
+            });
+        });
+        
+        // Track page load
+        window.addEventListener('load', function() {
+            trackConversion('page_load');
+        });
+    </script>
+</body>
+</html>
