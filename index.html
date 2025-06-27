@@ -8,6 +8,24 @@
     <meta property="og:title" content="36 Secrets to Combining Elegance and Comfort">
     <meta property="og:description" content="The Simple Fit Rule That Changed Everything About My Style">
     <meta property="og:type" content="website">
+    
+    <!-- Pinterest Pixel Base Code -->
+    <script>
+    !function(e){if(!window.pintrk){window.pintrk = function () {
+    window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+      n=window.pintrk;n.queue=[],n.version="3.0";var
+      t=document.createElement("script");t.async=!0,t.src=e;var
+      r=document.getElementsByTagName("script")[0];
+      r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+    pintrk('load', '2613084964764', {em: '<user_email_address>'});
+    pintrk('page');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none;" alt=""
+        src="https://ct.pinterest.com/v3/?event=init&tid=2613084964764&pd[em]=<hashed_email_address>&noscript=1" />
+    </noscript>
+    <!-- End Pinterest Pixel Base Code -->
+    
     <style>
         * {
             margin: 0;
@@ -292,7 +310,7 @@
                         <p>🔥 <strong>Limited Time:</strong> Get instant download for <span class="price">$19.99</span></p>
                     </div>
                     
-                    <a href="https://phoenixdigi.gumroad.com/l/elegant-comfort-secrets" class="cta-button" target="_blank" rel="noopener">
+                    <a href="https://phoenixdigi.gumroad.com/l/elegant-comfort-secrets" class="cta-button" target="_blank" rel="noopener" onclick="trackPinterestConversion('purchase')">
                         Get Your Copy Now →
                     </a>
                     
@@ -387,7 +405,7 @@
                 ✅ Mobile-friendly format</p>
             </div>
             
-            <a href="https://phoenixdigi.gumroad.com/l/elegant-comfort-secrets" class="cta-button" target="_blank" rel="noopener" style="background: white; color: #e74c3c; font-size: 1.3rem; padding: 20px 50px;">
+            <a href="https://phoenixdigi.gumroad.com/l/elegant-comfort-secrets" class="cta-button" target="_blank" rel="noopener" style="background: white; color: #e74c3c; font-size: 1.3rem; padding: 20px 50px;" onclick="trackPinterestConversion('purchase')">
                 Get Your Copy Now - $19.99 →
             </a>
             
@@ -397,26 +415,73 @@
         </div>
     </section>
 
-    <!-- Analytics and Tracking -->
+    <!-- Pinterest Pixel Event Tracking -->
     <script>
-        // Pinterest Pixel tracking
-        function trackConversion(action) {
-            console.log('Pinterest pixel tracking:', action);
-            // Add your Pinterest pixel code here
+        // Pinterest Pixel Event Tracking Functions
+        function trackPinterestConversion(eventType) {
+            try {
+                if (typeof pintrk !== 'undefined') {
+                    switch(eventType) {
+                        case 'purchase':
+                            pintrk('track', 'checkout', {
+                                value: 19.99,
+                                currency: 'USD',
+                                content_name: '36 Secrets to Combining Elegance and Comfort',
+                                content_category: 'Ebooks',
+                                content_ids: ['elegant-comfort-secrets']
+                            });
+                            break;
+                        case 'add_to_cart':
+                            pintrk('track', 'addtocart', {
+                                value: 19.99,
+                                currency: 'USD',
+                                content_name: '36 Secrets to Combining Elegance and Comfort'
+                            });
+                            break;
+                        case 'view_content':
+                            pintrk('track', 'pagevisit');
+                            break;
+                    }
+                }
+            } catch (e) {
+                console.log('Pinterest tracking error:', e);
+            }
         }
-        
-        // Track CTA button clicks
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function() {
-                trackConversion('button_click');
-                // Optional: Add Google Analytics or other tracking here
-            });
-        });
-        
+
         // Track page load
         window.addEventListener('load', function() {
-            trackConversion('page_load');
+            trackPinterestConversion('view_content');
         });
+
+        // Track scroll depth (engagement)
+        let scrollTracked = false;
+        window.addEventListener('scroll', function() {
+            if (!scrollTracked && window.scrollY > document.body.scrollHeight * 0.5) {
+                scrollTracked = true;
+                try {
+                    if (typeof pintrk !== 'undefined') {
+                        pintrk('track', 'custom', {
+                            event_name: 'scroll_50_percent'
+                        });
+                    }
+                } catch (e) {
+                    console.log('Pinterest scroll tracking error:', e);
+                }
+            }
+        });
+
+        // Track time on page (5 minutes = engaged user)
+        setTimeout(function() {
+            try {
+                if (typeof pintrk !== 'undefined') {
+                    pintrk('track', 'custom', {
+                        event_name: 'engaged_user_5min'
+                    });
+                }
+            } catch (e) {
+                console.log('Pinterest engagement tracking error:', e);
+            }
+        }, 300000); // 5 minutes
     </script>
 </body>
 </html>
