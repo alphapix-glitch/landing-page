@@ -9,7 +9,7 @@
     <meta property="og:description" content="The Simple Fit Rule That Changed Everything About My Style">
     <meta property="og:type" content="website">
     
-    <!-- Pinterest Pixel Base Code -->
+    <!-- Pinterest Tag -->
     <script>
     !function(e){if(!window.pintrk){window.pintrk = function () {
     window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
@@ -21,10 +21,10 @@
     pintrk('page');
     </script>
     <noscript>
-      <img height="1" width="1" style="display:none;" alt=""
-        src="https://ct.pinterest.com/v3/?event=init&tid=2613084964764&pd[em]=<hashed_email_address>&noscript=1" />
+    <img height="1" width="1" style="display:none;" alt=""
+      src="https://ct.pinterest.com/v3/?event=init&tid=2613084964764&pd[em]=<hashed_email_address>&noscript=1" />
     </noscript>
-    <!-- End Pinterest Pixel Base Code -->
+    <!-- end Pinterest Tag -->
     
     <style>
         * {
@@ -310,7 +310,7 @@
                         <p>🔥 <strong>Limited Time:</strong> Get instant download for <span class="price">$19.99</span></p>
                     </div>
                     
-                    <a href="https://phoenixdigi.gumroad.com/l/elegant-comfort-secrets" class="cta-button" target="_blank" rel="noopener" onclick="trackPinterestConversion('purchase')">
+                    <a href="https://phoenixdigi.gumroad.com/l/elegant-comfort-secrets" class="cta-button" target="_blank" rel="noopener">
                         Get Your Copy Now →
                     </a>
                     
@@ -405,7 +405,7 @@
                 ✅ Mobile-friendly format</p>
             </div>
             
-            <a href="https://phoenixdigi.gumroad.com/l/elegant-comfort-secrets" class="cta-button" target="_blank" rel="noopener" style="background: white; color: #e74c3c; font-size: 1.3rem; padding: 20px 50px;" onclick="trackPinterestConversion('purchase')">
+            <a href="https://phoenixdigi.gumroad.com/l/elegant-comfort-secrets" class="cta-button" target="_blank" rel="noopener" style="background: white; color: #e74c3c; font-size: 1.3rem; padding: 20px 50px;">
                 Get Your Copy Now - $19.99 →
             </a>
             
@@ -415,73 +415,34 @@
         </div>
     </section>
 
-    <!-- Pinterest Pixel Event Tracking -->
+    <!-- Enhanced Pinterest Tracking -->
     <script>
-        // Pinterest Pixel Event Tracking Functions
-        function trackPinterestConversion(eventType) {
-            try {
+        // Enhanced Pinterest event tracking
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Track Pinterest conversion event
                 if (typeof pintrk !== 'undefined') {
-                    switch(eventType) {
-                        case 'purchase':
-                            pintrk('track', 'checkout', {
-                                value: 19.99,
-                                currency: 'USD',
-                                content_name: '36 Secrets to Combining Elegance and Comfort',
-                                content_category: 'Ebooks',
-                                content_ids: ['elegant-comfort-secrets']
-                            });
-                            break;
-                        case 'add_to_cart':
-                            pintrk('track', 'addtocart', {
-                                value: 19.99,
-                                currency: 'USD',
-                                content_name: '36 Secrets to Combining Elegance and Comfort'
-                            });
-                            break;
-                        case 'view_content':
-                            pintrk('track', 'pagevisit');
-                            break;
-                    }
-                }
-            } catch (e) {
-                console.log('Pinterest tracking error:', e);
-            }
-        }
-
-        // Track page load
-        window.addEventListener('load', function() {
-            trackPinterestConversion('view_content');
-        });
-
-        // Track scroll depth (engagement)
-        let scrollTracked = false;
-        window.addEventListener('scroll', function() {
-            if (!scrollTracked && window.scrollY > document.body.scrollHeight * 0.5) {
-                scrollTracked = true;
-                try {
-                    if (typeof pintrk !== 'undefined') {
-                        pintrk('track', 'custom', {
-                            event_name: 'scroll_50_percent'
-                        });
-                    }
-                } catch (e) {
-                    console.log('Pinterest scroll tracking error:', e);
-                }
-            }
-        });
-
-        // Track time on page (5 minutes = engaged user)
-        setTimeout(function() {
-            try {
-                if (typeof pintrk !== 'undefined') {
-                    pintrk('track', 'custom', {
-                        event_name: 'engaged_user_5min'
+                    pintrk('track', 'lead', {
+                        value: 19.99,
+                        currency: 'USD'
                     });
                 }
-            } catch (e) {
-                console.log('Pinterest engagement tracking error:', e);
+            });
+        });
+        
+        // Track page sections viewed
+        window.addEventListener('scroll', function() {
+            const scrolled = window.scrollY;
+            const viewHeight = window.innerHeight;
+            
+            // Track when user scrolls to benefits section
+            if (scrolled > viewHeight * 0.5 && !window.benefitsTracked) {
+                if (typeof pintrk !== 'undefined') {
+                    pintrk('track', 'viewcontent');
+                }
+                window.benefitsTracked = true;
             }
-        }, 300000); // 5 minutes
+        });
     </script>
 </body>
 </html>
